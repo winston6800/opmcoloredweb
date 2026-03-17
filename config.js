@@ -1,6 +1,6 @@
 // One Punch Man Colored Manga Configuration
 // Set IMAGE_BASE_URL to use Cloudflare R2 (e.g. 'https://pub-xxx.r2.dev'). Leave null for local paths.
-const IMAGE_BASE_URL = 'https://opm-r2-worker.winston6800.workers.dev';
+const IMAGE_BASE_URL = 'https://pub-9e08c8a268a5410792a6069c3790e92b.r2.dev';
 
 const CHAPTERS = [
     { num: 100, pages: 32, folder: '../colorized/chapter 100', ext: '.jpg' },
