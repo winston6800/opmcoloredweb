@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read One Punch Man Colored Manga Online</title>
+    <meta name="description" content="Read One Punch Man manga fully colorized online with AI. Chapters 100-221 in HD quality.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Landing Page -->
+        <div class="landing-page" id="landingPage">
+            <header class="landing-header">
+                <div class="header-content">
+                    <h1 class="main-title">ONE PUNCH MAN</h1>
+                    <h2 class="subtitle">AI Colored Manga</h2>
+                </div>
+            </header>
+
+            <main class="landing-main">
+                <div class="ai-notice-section">
+                    <p class="ai-notice-text">This manga has been enhanced with AI colorization technology.</p>
+                </div>
+
+                <div class="synopsis-section">
+                    <div class="synopsis-text">
+                        <p>One Punch Man follows Saitama, a hero who can defeat any opponent with a single punch but seeks to find a worthy opponent. Written by ONE and illustrated by Yusuke Murata, this version features AI-powered colorization of chapters 100 through 221.</p>
+                    </div>
+
+                    <div class="arc-section">
+                        <h3 class="arc-title">Jump to Arc</h3>
+                        <div class="arc-grid">
+                            <div class="arc-card" data-start="100">
+                                <h4>Monster Association</h4>
+                                <p>Ch. 100–140</p>
+                                <button class="arc-btn">Read</button>
+                            </div>
+                            <div class="arc-card" data-start="141">
+                                <h4>Psychic Sisters</h4>
+                                <p>Ch. 141–170</p>
+                                <button class="arc-btn">Read</button>
+                            </div>
+                            <div class="arc-card" data-start="171">
+                                <h4>Neo Heroes</h4>
+                                <p>Ch. 171–221</p>
+                                <button class="arc-btn">Read</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapters-section">
+                    <div class="chapters-header">
+                        <h3 class="chapters-title">All Chapters</h3>
+                    </div>
+
+                    <div class="search-container">
+                        <input type="text" id="chapterSearch" placeholder="Search chapter number..." autocomplete="off">
+                    </div>
+
+                    <div class="chapter-highlights">
+                        <div class="chapter-highlight first-chapter">
+                            <span class="highlight-label">First</span>
+                            <span class="chapter-title-text">Chapter 100</span>
+                        </div>
+                        <div class="chapter-highlight new-chapter">
+                            <span class="highlight-label">Latest</span>
+                            <span class="chapter-title-text">Chapter 221</span>
+                        </div>
+                    </div>
+
+                    <div class="chapter-list" id="landingChaptersGrid"></div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Reader View -->
+        <div class="reader-view" id="readerView" style="display: none;">
+            <header class="header">
+                <div class="header-left">
+                    <div class="manga-title">
+                        <span class="title">One Punch Man</span>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div class="chapter-nav">
+                        <span class="chapter">Ch. 100</span>
+                    </div>
+                    <div class="page-nav">
+                        <span class="current-page">1</span>
+                        <span class="page-separator">/</span>
+                        <span class="total-pages">1</span>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button id="homeBtn" class="home-btn" title="Home">
+                        <span class="icon">&#8962;</span>
+                        <span class="btn-text">Home</span>
+                    </button>
+                    <button id="prevChapterBtn" class="nav-btn" disabled title="Previous Chapter">
+                        <span class="icon">&larr;</span>
+                    </button>
+                    <button id="nextChapterBtn" class="nav-btn" title="Next Chapter">
+                        <span class="icon">&rarr;</span>
+                    </button>
+                    <button id="fullscreenBtn" class="control-btn" title="Fullscreen">
+                        <span class="icon">&#x26F6;</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="reader-container">
+                <div class="reader-viewport" id="readerViewport">
+                    <div class="page-container" id="pageContainer"></div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>Loading chapter...</p>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <span class="footer-text">AI colorized with</span>
+                <a href="https://chromai-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="chromanga-link">
+                    <strong>Chromanga</strong>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

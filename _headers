@@ -1,0 +1,9 @@
+# Cloudflare Pages: Cache static assets
+/config.js
+  Cache-Control: public, max-age=3600
+
+/script.js
+  Cache-Control: public, max-age=3600
+
+/styles.css
+  Cache-Control: public, max-age=3600
