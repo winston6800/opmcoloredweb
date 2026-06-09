@@ -363,7 +363,13 @@ class MangaReader {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => new MangaReader());
+document.addEventListener('DOMContentLoaded', () => {
+    new MangaReader();
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg && IMAGE_BASE_URL) {
+        heroBg.style.backgroundImage = `url('${IMAGE_BASE_URL}/colorizedopm/chapter 100/1_colorized.webp')`;
+    }
+});
 document.addEventListener('fullscreenchange', () => {
     if (!document.fullscreenElement) document.body.classList.remove('fullscreen');
 });
