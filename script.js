@@ -151,7 +151,7 @@ class MangaReader {
     async loadPages() {
         this.pageContainer.innerHTML = '';
         const pages = getChapterPages(this.currentChapter);
-        const preloadCount = Math.min(3, pages.length);
+        const preloadCount = Math.min(10, pages.length);
         const preloadPromises = [];
 
         for (let i = 0; i < pages.length; i++) {
@@ -213,13 +213,13 @@ class MangaReader {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    if (img.dataset.src && !img.src) {
+                    if (img.dataset.src) {
                         this.preloadImage(img.dataset.src, img);
                     }
                     this.intersectionObserver.unobserve(img);
                 }
             });
-        }, { rootMargin: '50px 0px', threshold: 0.1 });
+        }, { rootMargin: '1500px 0px', threshold: 0.0 });
     }
 
     setReadingMode(mode) {
