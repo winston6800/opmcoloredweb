@@ -151,7 +151,9 @@ class MangaReader {
     async loadPages() {
         this.pageContainer.innerHTML = '';
         const pages = getChapterPages(this.currentChapter);
-        const preloadCount = Math.min(10, pages.length);
+        const isClickPage = this.readingMode === 'clickPage';
+        // In click-page mode preload everything; in long-strip preload first 10 eagerly
+        const eagerCount = isClickPage ? pages.length : Math.min(10, pages.length);
         const preloadPromises = [];
 
         for (let i = 0; i < pages.length; i++) {
@@ -159,7 +161,7 @@ class MangaReader {
             const img = document.createElement('img');
             img.className = 'manga-page';
             img.alt = `Page ${page.number}`;
-            img.loading = i < preloadCount ? 'eager' : 'lazy';
+            img.loading = i < eagerCount ? 'eager' : 'lazy';
 
             img.addEventListener('click', (e) => {
                 if (this.readingMode !== 'clickPage') return;
@@ -177,14 +179,16 @@ class MangaReader {
                 img.classList.add('loaded');
             });
 
-            if (this.readingMode === 'clickPage' && i > 0) {
+            if (isClickPage && i > 0) {
                 img.style.display = 'none';
             }
 
             this.pageContainer.appendChild(img);
 
-            if (i < preloadCount) {
-                preloadPromises.push(this.preloadImage(page.path, img));
+            if (i < eagerCount) {
+                // Preload in background without blocking — first page is awaited below
+                const p = this.preloadImage(page.path, img);
+                if (i === 0) preloadPromises.push(p);
             } else if (this.intersectionObserver) {
                 img.dataset.src = page.path;
                 this.intersectionObserver.observe(img);
