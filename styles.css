@@ -608,6 +608,26 @@ body {
 
 .chromanga-link:hover { color: var(--red-bright); }
 
+.footer-divider {
+    margin: 0 0.6rem;
+    color: var(--border);
+}
+
+.instagram-link {
+    text-decoration: none;
+    color: #c77dff;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.instagram-link:hover { color: #e0aaff; }
+
+.ig-icon { font-style: normal; }
+
 /* Fullscreen */
 body.fullscreen .header { display: none; }
 body.fullscreen .reader-container { height: 100vh; }
